@@ -1,14 +1,20 @@
 #include <iostream>
 
-char getUserValue(){
-	std::cout << "Enter a number: ";
-	char a;
-	std::cin>>a;
-	return a;
+#ifndef USERINPUT_CPP
+#define USERINPUT_CPP
+
+namespace userinput{
+	char getUserValue(){
+		std::cout << "Enter a character: ";
+		char a;
+		std::cin>>a;
+		return a;
+	}
 }
-int main(){
-	char x;
-	x = getUserValue();
-	std::cout << ~x << " " << x << std::endl;
-	return 0;
-}
+#endif
+//int main(){
+//	char x;
+//	x = userinput::getUserValue();
+//	std::cout << "The ascii code for char " << x << " is " << static_cast<int>(x) << std::endl;
+//	return 0;
+//}
